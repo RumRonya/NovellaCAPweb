@@ -4,52 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5eb6f96-487e-42e6-9d21-0419c9a7b180" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCAPBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCreateAndPlayDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaGameDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/GamePlay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/Duration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/NovellaGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/Scene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/answers/Answer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/answers/TypeEnd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/dependencies/DependenciesList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/dependencies/Dependency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/dependencies/DependencyDefinable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/dependencies/DependencyLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/dialogs/Dialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/dialogs/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/dialogs/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/inventory/ChangeType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/inventory/ChangerInventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/inventory/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/gameplayelements/inventory/Thing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/playprogressparts/CheckPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/playprogressparts/Choice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/playprogressparts/DiaryWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/playprogressparts/Note.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/playprogressparts/PlayProgress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/novella_models/users/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="e5eb6f96-487e-42e6-9d21-0419c9a7b180" name="Changes" comment="add Maven" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "RumRonya"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/RumRonya/NovellaCreateAndPlay",
+    "accountId": "b8dd6776-6ebc-402d-ae87-b710d4d96da8"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
@@ -96,11 +76,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1728975176440</updated>
-      <workItem from="1728975177361" duration="1878000" />
+      <workItem from="1728975177361" duration="2322000" />
     </task>
+    <task id="LOCAL-00001" summary="add Maven">
+      <option name="closed" value="true" />
+      <created>1728977172994</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728977172994</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add Maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Maven" />
   </component>
 </project>
