@@ -14,8 +14,8 @@
         <%
             List<User> users = (List<User>) request.getAttribute("List users");
             for (User user : users) {
-                user.getLogin();
-                user.getPassword();
+                out.print(user.getLogin());
+                out.print(user.getPassword());
             }
         %>
     </div>
