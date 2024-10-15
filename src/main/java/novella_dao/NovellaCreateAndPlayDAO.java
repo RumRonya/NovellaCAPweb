@@ -6,6 +6,7 @@ import novella_models.users.User;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
 public class NovellaCreateAndPlayDAO implements NovellaCAPBase{
     private Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/novella_create_and_play", "root", "Ver13deth4");;
@@ -47,6 +48,15 @@ public class NovellaCreateAndPlayDAO implements NovellaCAPBase{
     public void createUser(String username, String password) {
         try {
             new UserDAO(connection).createUser(username, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public List<User> getUsers() {
+        try {
+            return new UserDAO(connection).getUsers();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

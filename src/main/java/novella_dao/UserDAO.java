@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.String.format;
 
@@ -59,5 +61,17 @@ public class UserDAO {
         String INSERT_USER = "INSERT INTO `novella_create_and_play`.`users` (`login`, `password`) VALUES ('%s', '%s')";
         Statement statement = connection.createStatement();
         statement.executeUpdate(format(INSERT_USER, login, password));
+    }
+
+    public List<User> getUsers() throws SQLException {
+        ResultSet resultSet = connection.prepareStatement("SELECT * FROM `novella_create_and_play`.`users`").executeQuery();
+        List<User> users = new ArrayList<>();
+        while (resultSet.next()){
+            User user = new User();
+            user.setLogin(resultSet.getString("login"));
+            user.setPassword(resultSet.getString("password"));
+            users.add(user);
+        }
+        return users;
     }
 }

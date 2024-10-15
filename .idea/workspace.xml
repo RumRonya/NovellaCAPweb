@@ -2,16 +2,21 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="NovellasCAP_site:war" />
+      <artifact name="NovellasCAP_site:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5eb6f96-487e-42e6-9d21-0419c9a7b180" name="Changes" comment="add Maven">
+    <list default="true" id="e5eb6f96-487e-42e6-9d21-0419c9a7b180" name="Changes" comment="continue Maven">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/UsersServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/users.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCAPBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCAPBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCreateAndPlayDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCreateAndPlayDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novella_dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novella_dao/UserDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,14 @@
   <component name="ChangesViewManager">
     <option name="groupingKeys">
       <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
     </option>
   </component>
   <component name="Git.Settings">
@@ -38,6 +51,13 @@
     &quot;accountId&quot;: &quot;b8dd6776-6ebc-402d-ae87-b710d4d96da8&quot;
   }
 }</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -51,6 +71,7 @@
   "keyToString": {
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Kitty_run.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -62,6 +83,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -154,7 +180,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="NovellasCAP_site:war" />
+          <artifact name="NovellasCAP_site:war exploded" />
         </option>
       </method>
     </configuration>
@@ -177,7 +203,7 @@
       <updated>1728975176440</updated>
       <workItem from="1728975177361" duration="3580000" />
       <workItem from="1728978957314" duration="254000" />
-      <workItem from="1728979333494" duration="265000" />
+      <workItem from="1728979333494" duration="2575000" />
     </task>
     <task id="LOCAL-00001" summary="add Maven">
       <option name="closed" value="true" />
@@ -203,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728977980869</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="continue Maven">
+      <option name="closed" value="true" />
+      <created>1728979742136</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728979742136</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +256,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Maven" />
+    <MESSAGE value="continue Maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="continue Maven" />
   </component>
 </project>
