@@ -2,6 +2,7 @@ package novella_models.logicnovellas.gameplayelements.inventory;
 
 import novella_models.logicnovellas.NovellaGame;
 import novella_models.logicnovellas.gameplayelements.dependencies.DependencyDefinable;
+import novella_models.playprogressparts.PlayProgress;
 
 public class Thing implements DependencyDefinable {
     private int ID;
@@ -77,5 +78,13 @@ public class Thing implements DependencyDefinable {
 
     public void setCountable(boolean countable) {
         isCountable = countable;
+    }
+
+    @Override
+    public boolean isInProgress(PlayProgress playProgress) {
+        for (Thing th: playProgress.getInventory().getThings()){
+            if (th.equals(this)) return true;
+        }
+        return false;
     }
 }

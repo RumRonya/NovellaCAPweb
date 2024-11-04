@@ -2,36 +2,30 @@ package servlets;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import novella_dao.NovellaCreateAndPlayDAO;
-import novella_dao.NovellaGameDAO;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
+public class NovellaServlet extends HttpServlet {
 
-public class UsersServlet extends HttpServlet {
+    public NovellaServlet(){
 
-    public UsersServlet() {
     }
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            req.setAttribute("List users", new NovellaCreateAndPlayDAO().getUsers());
+            req.setAttribute("List novellas", new NovellaCreateAndPlayDAO().getUsers());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         //super.doGet(req, resp);
 
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/users.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/novellas.jsp");
         rd.forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     }
 }

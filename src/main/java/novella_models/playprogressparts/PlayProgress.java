@@ -120,11 +120,12 @@ public class PlayProgress {
 
     public boolean isContain(DependencyDefinable dependentObject) {
         if (dependentObject==null) return false;
-        if (dependentObject instanceof Choice) return isContainChoice((Choice) dependentObject);
-        if (dependentObject instanceof Thing) return  isContainThing((Thing) dependentObject);
-        return false;
+        //if (dependentObject instanceof Choice) return isContainChoice((Choice) dependentObject);
+        //if (dependentObject instanceof Thing) return  isContainThing((Thing) dependentObject);
+        return dependentObject.isInProgress(this);
+        //return false;
     }
-
+/*
     private boolean isContainChoice(Choice choice) {
         for (Choice ch: choiceList){
             if (ch.getNumScene()==choice.getNumScene()){
@@ -140,7 +141,7 @@ public class PlayProgress {
         }
         return false;
     }
-
+*/
     public Scene getCurrentScene() throws InstanceNotFoundException {
         return novellaGame.sceneByNum(numCurrentScene());
     }

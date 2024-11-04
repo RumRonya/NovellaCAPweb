@@ -12,4 +12,13 @@
     <servlet-name>usersServlet</servlet-name>
     <url-pattern>/users</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>novellasServlet</servlet-name>
+    <servlet-class>servlets.NovellaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>novellasServlet</servlet-name>
+    <url-pattern>/novellas</url-pattern>
+  </servlet-mapping>
 </web-app>

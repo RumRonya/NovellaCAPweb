@@ -31,4 +31,14 @@ public class Choice implements DependencyDefinable {
     public void setNumAnswer(int numAnswer) {
         this.numAnswer = numAnswer;
     }
+
+    @Override
+    public boolean isInProgress(PlayProgress playProgress) {
+        for (Choice ch: playProgress.getChoiceList()){
+            if (ch.numScene==this.numScene){
+                if (this.numAnswer==0||ch.numAnswer==this.numAnswer) return true;
+            }
+        }
+        return false;
+    }
 }

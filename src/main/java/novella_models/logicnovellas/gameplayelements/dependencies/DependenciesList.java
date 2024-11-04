@@ -11,6 +11,7 @@ public class DependenciesList {
     private int ID;
     private List<Dependency> listDependencies;
     private DependencyLogic dependencyLogic;
+    private boolean isShow = true;
 
     public DependenciesList() {
         listDependencies = new ArrayList<Dependency>();
@@ -61,10 +62,18 @@ public class DependenciesList {
     public boolean isPlay(PlayProgress playProgress){
         if (listDependencies==null || listDependencies.isEmpty()) return true;
         for (Dependency dependency: listDependencies){
-            boolean isShowDependency = dependency.isShow(playProgress);
-            if (dependencyLogic == DependencyLogic.OR && isShowDependency) return true;
-            if (dependencyLogic == DependencyLogic.AND && !isShowDependency) return false;
+            boolean isCorrectDepend = dependency.isEquals(playProgress);
+            if (dependencyLogic == DependencyLogic.OR && isCorrectDepend) return isShow;
+            if (dependencyLogic == DependencyLogic.AND && !isCorrectDepend) return !isShow;
         }
-        return dependencyLogic != DependencyLogic.OR;
+        return (dependencyLogic == DependencyLogic.OR) ? !isShow : isShow;
+    }
+
+    public boolean isShow() {
+        return isShow;
+    }
+
+    public void setShow(boolean show) {
+        isShow = show;
     }
 }
