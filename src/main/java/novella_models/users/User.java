@@ -20,7 +20,7 @@ public class User {
     }
 
     public void setID_USER(int ID_USER) {
-        this.ID_USER = ID_USER;
+        this.ID_USER =  ID_USER;
     }
 
     public String getLogin() {
