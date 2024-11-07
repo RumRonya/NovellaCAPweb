@@ -74,4 +74,19 @@ public class UserDAO {
         }
         return users;
     }
+
+    public List<User> getCreatingUsers() throws SQLException {
+        ResultSet resultSet = connection.prepareStatement("SELECT login, image, users.ID, count(novellas.id_creator)\n" +
+                "FROM novella_create_and_play.users\n" +
+                "INNER JOIN novella_create_and_play.novellas ON users.ID = novellas.id_creator\n" +
+                "GROUP BY novellas.id_creator").executeQuery();
+        List<User> users = new ArrayList<>();
+        while (resultSet.next()){
+            User user = new User();
+            user.setID_USER(resultSet.getInt("ID"));
+            user.setLogin(resultSet.getString("login"));
+            users.add(user);
+        }
+        return users;
+    }
 }

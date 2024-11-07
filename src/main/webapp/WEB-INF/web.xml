@@ -21,4 +21,13 @@
     <servlet-name>novellasServlet</servlet-name>
     <url-pattern>/novellas</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+  <servlet-name>editInfoNovellaServlet</servlet-name>
+  <servlet-class>servlets.EditInfoNovellaServlet</servlet-class>
+</servlet>
+  <servlet-mapping>
+    <servlet-name>editInfoNovellaServlet</servlet-name>
+    <url-pattern>/edit_info</url-pattern>
+  </servlet-mapping>
 </web-app>

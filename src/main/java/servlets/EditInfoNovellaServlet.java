@@ -2,12 +2,10 @@ package servlets;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import novella_dao.NovellaCreateAndPlayDAO;
-import novella_dao.NovellaGameDAO;
 import novella_models.logicnovellas.NovellaGame;
 import novella_models.users.User;
 
@@ -15,34 +13,28 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+public class EditInfoNovellaServlet  extends HttpServlet {
 
-public class UsersServlet extends HttpServlet {
-
-    public UsersServlet() {
+    public EditInfoNovellaServlet() {
     }
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             NovellaCreateAndPlayDAO dao = new NovellaCreateAndPlayDAO();
-            List<User> users = dao.getCreatingUsers();
+            Map<Integer, String> genres = dao.getGenres();
 
-            req.setAttribute("List users", users);
+            req.setAttribute("genres", genres);
 
-            List<NovellaGame>  bests = new ArrayList<>();
-            for (User user : users) {
-                bests.add(dao.getTheBestNovellaGameByUserId(user.getID_USER()));
-            }
-
-            req.setAttribute("bests", bests);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         //super.doGet(req, resp);
 
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/users.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/jsp/edit_info_novella.jsp");
         rd.forward(req, resp);
     }
 
@@ -50,3 +42,4 @@ public class UsersServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     }
 }
+

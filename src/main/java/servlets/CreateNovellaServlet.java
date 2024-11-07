@@ -2,12 +2,10 @@ package servlets;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import novella_dao.NovellaCreateAndPlayDAO;
-import novella_dao.NovellaGameDAO;
 import novella_models.logicnovellas.NovellaGame;
 import novella_models.users.User;
 
@@ -16,10 +14,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+public class CreateNovellaServlet  extends HttpServlet {
 
-public class UsersServlet extends HttpServlet {
-
-    public UsersServlet() {
+    public CreateNovellaServlet() {
     }
 
     @Override
@@ -50,3 +47,4 @@ public class UsersServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     }
 }
+

@@ -1,15 +1,12 @@
-<%@ page import="novella_models.users.User" %>
-<%@ page import="java.util.List" %>
-<%@ page import="novella_models.logicnovellas.NovellaGame" %><%--
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %><%--
   Created by IntelliJ IDEA.
   User: rumro
-  Date: 15.10.2024
-  Time: 11:30
+  Date: 07.11.2024
+  Time: 12:57
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page isELIgnored="false" %>
-
 <html lang="ru" class="bx-core bx-no-touch bx-no-retina bx-chrome" style="overflow: auto;">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,10 +21,9 @@
     <script type="text/javascript" async="" charset="utf-8" src="./not_my_design_files/recaptcha__ru.js" crossorigin="anonymous" integrity="sha384-xSpADhmR8QuwMZh26g+ydm5JcFi5oiRu4SCRE9qNJpWSUlU/MTa5kpy3WlJqQih6"></script>
     <script type="text/javascript" async="" src="./not_my_design_files/ba.js"></script>
     <script type="text/javascript" data-amopt-skip-moving="true">
-        <script type="text/javascript" data-amopt-skip-moving="true">
-            var _ba = _ba || []; _ba.push(["aid", "2974ee7e02822bfa5d2ec2fa46285c53"]);
-            _ba.push(["host", ""]);
-            (function() {var ba = document.createElement("script");
+        var _ba = _ba || []; _ba.push(["aid", "2974ee7e02822bfa5d2ec2fa46285c53"]);
+        _ba.push(["host", "st-peterburg.kvest-battle.ru"]);
+        (function() {var ba = document.createElement("script");
             ba.type = "text/javascript"; ba.async = true;
             ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";
             var s = document.getElementsByTagName("script")[0];
@@ -37,7 +33,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="robots" content="index, follow">
-
+    <meta name="keywords" content="Квест Батл, квесты">
+    <meta name="description" content="«Квест Батл» объединяет все лучшие квесты и перфомансы. Поиск квеста на любую тематику и для любого возраста.">
     <script type="text/javascript" data-skip-moving="true">
         (function(w, d) {
             var v = w.frameCacheVars = {'CACHE_MODE':'HTMLCACHE','storageBlocks':[],'dynamicBlocks':{'dynamic_header_city':'d41d8cd98f00','dynamic_header_auth':'d41d8cd98f00','bWekqd':'07dbb3884f1e','LkGdQn':'f87ab82b53dc','5EQSDG':'31ee2faabcbe','Zf9HeZ':'d41d8cd98f00','CEJ53M':'d41d8cd98f00','g3fp9P':'d41d8cd98f00','BCcsuQ':'d41d8cd98f00','F8Rdyx':'d41d8cd98f00','XEVOpk':'4a10bf5105be','g8taYv':'ca8a8fd21edb','dynamic_auth_form':'d41d8cd98f00','12qfnv':'3f2c2f679efb'},'AUTO_UPDATE':true,'AUTO_UPDATE_TTL':'0','version':'2'};
@@ -123,7 +120,7 @@
             }
         })(window, document);
     </script>
-    <title>Novellas (create & play)</title>
+    <title>Banana's life</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/basic/logo_ico.png">
     <!-- Stylesheets --><!-- Scripts -->
     <style data-critical="yes">
@@ -142,13 +139,6 @@
     <link rel="stylesheet" href="./not_my_design_files/widget.css" class="jv-css"><link rel="stylesheet" type="text/css" href="./not_my_design_files/omnichannelMenu.widget.css"></head>
 <body style="overflow: hidden;">
 
-<!-- Preloader -->
-<div class="preloader js-preloader">
-    <div class="preloader__content">
-        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjAiIHdpZHRoPSIxMjhweCIgaGVpZ2h0PSIxMjhweCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50Ij48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMDIwMmQiIGZpbGwtb3BhY2l0eT0iMSIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdGggZD0iTTYzLjg1IDBBNjMuODUgNjMuODUgMCAxIDEgMCA2My44NSA2My44NSA2My44NSAwIDAgMSA2My44NSAwem0uNjUgMTkuNWE0NCA0NCAwIDEgMS00NCA0NCA0NCA0NCAwIDAgMSA0NC00NHoiIGZpbGw9InVybCgjbGluZWFyLWdyYWRpZW50KSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIGZyb209IjAgNjQgNjQiIHRvPSIzNjAgNjQgNjQiIGR1cj0iOTYwbXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGVUcmFuc2Zvcm0+PC9nPjwvc3ZnPg==" alt="" class="preloader__icon"><div class="preloader__caption">Подождите, пожалуйста</div>
-    </div>
-</div>
-
 <!-- No script warning -->
 <noscript>
     <div id="noScriptWarning">
@@ -166,7 +156,6 @@
     для корректного отображения страницы.
 </div>
 <![endif]-->
-
 
 <header class="header js-header is-fixed"><div class="header__wrap page-container clearfix">
 
@@ -251,72 +240,67 @@
 
 <div id="bxdynamic_LkGdQn_end" style="display:none"></div>
 
+<div class="index-filter pattern-block"></div>
 
-<div class="index-filter pattern-block">
+<div class="page-main">
+    <div class="quest-preview__wrap page-container" style="padding-left: 350px; padding-right: 350px; padding-top: 50px" class="auth-form-2">
+        <form action="/submit_form" method="POST">
+            <label for="title" >Название:</label><br>
+            <input type="text" id="title" name="title"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark">
 
-</div>
-<div data-tab-id="tab-1" class="tab-content js-tab-content is-active">
-    <div class="page-container page-block">
+            <label for="vertical_poster">Вертикальный постер:</label><br>
+            <input type="file" id="vertical_poster" name="vertical_poster" class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark" accept="image/*">
 
+            <label for="horizontal_poster">Горизонтальный постер:</label><br>
+            <input type="file" id="horizontal_poster" name="horizontal_poster"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark" accept="image/*">
 
-        <div data-tab-id="tab-2-4" class="tab-content js-tab-content is-active">
-            <div class="tab-content is-active">
-                <div class="team-items" data-entity="container-9">
-                    <!-- items-container -->
-                    <%
-                        List<User> users = (List<User>) request.getAttribute("List users");
-                        List<NovellaGame> bests = (List<NovellaGame>) request.getAttribute("bests");
-                        for(int i=0; i<users.size(); i++){%>
-                    <div class="team-item" id="" style="width: 30%; display: inline-block; margin-right: 2%; padding: 5px; height:330px; overflow-y: auto" data-entity="items-row">
-                       <!-- <div style="display: inline-block">
-                            <a href="/personal/team/833159/">
+            <label>Жанры:</label>
 
-                                <img src="images/users/verdeth.webp" style="width: 150px; object-fit: cover" alt="картинка _Нагибаторы228_ от Квест Батл" title="картинка _Нагибаторы228_ от Квест Батл"></a>
+            <%
 
-                        </div>
+                Map<Integer, String> genres = (HashMap<Integer, String>) request.getAttribute("genres");
+                int i = 0;
+                for(Map.Entry<Integer, String> entry: genres.entrySet()){
+                    if (i%3==0) {out.print("<br>");}
+            %>
 
--->
-                        <div class="team-item__col team-item__col--mid-left" style="display:inline-block; padding: 20px">
-                            <h3 class="team-item__title page-title page-title--h3">
-                                <a href="index.html">
-                                        <img src="images/users/verdeth.webp" style="width: 100px; object-fit: cover; border-radius: 50px; margin-right: 15px; display:inline-block; float: left"  alt="картинка _Нагибаторы228_ от Квест Батл" title="картинка _Нагибаторы228_ от Квест Батл">
-                                    <div style="float: right;">
-                                        <div><%out.print(users.get(i).getLogin());%></div>
-                                        <div class="team-item__stat quest-stat quest-stat--small quest-stat--rating">
-                                        Средний рейтинг:<br> <strong>8.5</strong>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="team-item__stat quest-stat quest-stat--small quest-stat--complete-1">
-                                    Лучшая новела:<br> <a href="novella_info.html" style="color: #f5c839"><u><strong style="color: #f5c839"><%out.print(bests.get(i).getName());%></strong></u></a>
-                                </div>
-                                <div class="team-item__stat quest-stat--small">
-                                    Основные жанры:<br>
-                                    <a href="novella_info.html" style="color: #f5c839"><u style="color: #f5c839">приколючения</u></a>,
-                                    <a href="novella_info.html" style="color: #f5c839"><u style="color: #f5c839">романтика</u></a>
-                                </div>
-                            </h3>
-                            <div class="clearfix">
-                                <a href="/personal/team/833159/" class="team-item__more button button--medium button--transparent-yellow" style="margin-top: 15px; margin-left: 20%; margin-right: 20%;">смотреть все работы (133)</a>
-                            </div>
-                        </div>
+            <input type="checkbox" id="genre_comedy" name="genre[]" value="<%out.print(entry.getKey());%>>"  style="display: inline-block">
+            <label for="genre_comedy" style="display: inline-block; width: 25%"><%out.print(entry.getValue());%></label>
+<%i++; }%>
 
-                    </div>
-                    <%}%>
-                    <!-- items-container -->
-                </div>
+            <br>
+            <br>
+            <label for="description">Описание:</label><br>
+            <textarea id="description" name="description"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark"></textarea>
 
-                <div class="show-more" data-use="show-more-9">
-                    <span class="button button--large button--yellow">Показать ещё</span>
-                </div>
-            </div>
-            <div id="bxdynamic_F8Rdyx_end" style="display:none"></div>
-        </div>
+            <label>Возрастное ограничение:</label><br>
+            <input type="radio" id="age_0" name="age" value="0+" style="display: inline-block">
+            <label for="age_0" style="display: inline-block; margin-right: 15px">0+</label>
 
+            <input type="radio" id="age_6" name="age" value="6+" style="display: inline-block">
+            <label for="age_6" style="display: inline-block;  margin-right: 15px">6+</label>
 
+            <input type="radio" id="age_12" name="age" value="12+" style="display: inline-block">
+            <label for="age_12" style="display: inline-block;  margin-right: 15px">12+</label>
+
+            <input type="radio" id="age_18" name="age" value="18+" style="display: inline-block">
+            <label for="age_18" style="display: inline-block">18+</label><br><br>
+
+            <input type="submit" value="Создать" class="button button--large button--red" style="display:inline-block;"><a class="button button--large" style="display: inline-block" id="del">Удалить</a>
+        </form>
     </div>
 </div>
 
+<script>
+    const divElement = document.getElementById('del');
+    divElement.addEventListener('click', function() {
+        const choice = confirm('Вы хотите удалить новеллу?');
+        if(choice) {
+            window.location.href = 'my_novellas.html';
+        } else {
+            //остаемся на текущей странице
+        }});
+</script>
 
 
 <footer class="footer">
@@ -338,9 +322,6 @@
         </div>
     </div>
 </footer>
-
-
-
 
 <noscript><div><img src="https://mc.yandex.ru/watch/52259335" style="position:absolute; left:-9999px;" alt></div></noscript>    <script type="text/javascript">if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script><script type="text/javascript">(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script><script type="text/javascript" src="./not_my_design_files/core.min.js"></script><script>BX.setJSList(['/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/core/core_promise.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/loadext/loadext.js','/bitrix/js/main/loadext/extension.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/includes/js/includes.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/ui/polyfill/closest/js/closest.js','/bitrix/js/main/polyfill/fill/main.polyfill.fill.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/core/core.js','/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js','/bitrix/js/main/lazyload/dist/lazyload.bundle.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/parambag/dist/parambag.bundle.js']);
 BX.setCSSList(['/bitrix/js/main/lazyload/dist/lazyload.bundle.css','/bitrix/js/main/parambag/dist/parambag.bundle.css']);</script><script type="text/javascript">(window.BX||top.BX).message({'pull_server_enabled':'N','pull_config_timestamp':'1549288611','pull_guest_mode':'N','pull_guest_user_id':'0'});(window.BX||top.BX).message({'PULL_OLD_REVISION':'Для продолжения корректной работы с сайтом необходимо перезагрузить страницу.'});</script><script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','UTF_MODE':'Y','SITE_ID':'s1','SITE_DIR':'/'});</script><script type="text/javascript" src="./not_my_design_files/kernel_main_v1.js"></script><script type="text/javascript" src="./not_my_design_files/script.js"></script><script async="" src="./not_my_design_files/api.js"></script><script type="text/javascript" src="./not_my_design_files/kernel_main_polyfill_customevent_v1.js"></script><script type="text/javascript" src="./not_my_design_files/dexie.bitrix.bundle.min.js"></script><script type="text/javascript" src="./not_my_design_files/core_ls.min.js"></script><script type="text/javascript" src="./not_my_design_files/core_frame_cache.min.js"></script><script type="text/javascript" src="./not_my_design_files/protobuf.min.js"></script><script type="text/javascript" src="./not_my_design_files/model.min.js"></script><script type="text/javascript" src="./not_my_design_files/rest.client.min.js"></script><script type="text/javascript" src="./not_my_design_files/pull.client.min.js"></script><script type="text/javascript" src="./not_my_design_files/jquery-1.8.3.min.js"></script><script type="text/javascript" src="./not_my_design_files/main.popup.bundle.min.js"></script><script type="text/javascript">BX.setJSList(['/bitrix/js/main/core/core_fx.js','/bitrix/js/main/session.js','/bitrix/js/main/date/main.date.js','/bitrix/js/main/core/core_date.js','/bitrix/js/main/pageobject/pageobject.js','/bitrix/js/main/core/core_webrtc.js','/bitrix/js/main/core/core_dd.js','/bitrix/js/main/core/core_window.js','/bitrix/js/main/utils.js','/bitrix/js/main/polyfill/customevent/main.polyfill.customevent.js','/local/templates/.default/js/vendor/jquery.min.js','/local/templates/.default/js/vendor/jquery-ui.min.js','/local/templates/.default/js/vendor/jquery.lazyloadxt.min.js','/local/templates/.default/js/vendor/jquery.lazyloadxt.bg.min.js','/local/templates/.default/js/vendor/jquery.ui.datepicker-ru.js','/local/templates/.default/js/vendor/jquery.fancybox.min.js','/local/templates/.default/js/vendor/jquery.ba-throttle-debounce.min.js','/local/templates/.default/js/vendor/jquery.customSelect.min.js','/local/templates/.default/js/vendor/owl.carousel.min.js','/local/templates/.default/js/vendor/isotope.pkgd.min.js','/local/templates/.default/js/vendor/jquery.cookie.js','/local/templates/.default/js/vendor/maskedinput.min.js','/local/templates/.default/js/vendor/jquery.inputmask.js','/local/templates/.default/js/vendor/clipboard.min.js','/local/templates/.default/js/plugins.js','/local/templates/.default/js/main.js','/local/components/webtu/search.title/templates/header/script.js','/local/components/webtu/favorites.line/templates/.default/script.js','/local/templates/.default/components/webtu/catalog.smart.filter/home_page/script.js','/local/templates/.default/components/bitrix/news.list/popular/script.js','/local/templates/.default/components/bitrix/news.list/new/script.js','/local/templates/.default/components/bitrix/news.list/rating_horizontal_home/script.js','/local/components/webtu/organization.offers.promo.list/templates/home-page/script.js','/local/components/webtu/user.team.list/templates/rating/script.js','/local/components/webtu/geoip.search.city/templates/.default/script.js','/local/templates/.default/components/bitrix/main.register/popup/script.js']);</script><script type="text/javascript">(function () {
@@ -414,7 +395,7 @@ var obbx_2502438151_FL = new FavoritesLineComponent({'CONFIG':{'SITE_ID':'s1','P
         },
         mess: {}
     });
-});</script><script type="text/javascript">var smartFilter = new JCSmartFilter('/', 'HORIZONTAL', {'SEF_SET_FILTER_URL':'','SEF_DEL_FILTER_URL':' '});</script><script>BX.message({
+});</script><script type="text/javascript">var smartFilter = new JCSmartFilter('/', 'HORIZONTAL', {'SEF_SET_FILTER_URL':'/poisk-kvestov/filter/clear/apply/','SEF_DEL_FILTER_URL':'/poisk-kvestov/filter/clear/apply/'});</script><script>BX.message({
     BTN_MESSAGE_LAZY_LOAD_WAITER: 'Загрузка',
 });
 var obbx_1373509569_2 =
@@ -595,4 +576,3 @@ body.compensate-for-scrollbar{overflow:hidden;}.fancybox-active{height:auto;}.fa
 
 <div id="jivo-iframe-container" style="opacity: 0; visibility: hidden; width: 0px; height: 0px; overflow: hidden;"><iframe src="./not_my_design_files/saved_resource.html" role="presentation" allow="autoplay" title="Jivochat" name="jivo_container" id="jivo_container" frameborder="no"></iframe></div>
 </body></html>
-

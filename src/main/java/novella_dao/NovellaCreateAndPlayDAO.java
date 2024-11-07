@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public class NovellaCreateAndPlayDAO implements NovellaCAPBase{
     private Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/novella_create_and_play", "root", "Ver13deth4");;
@@ -63,6 +64,24 @@ public class NovellaCreateAndPlayDAO implements NovellaCAPBase{
     }
 
     @Override
+    public List<User> getCreatingUsers() {
+        try {
+            return new UserDAO(connection).getCreatingUsers();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public NovellaGame getTheBestNovellaGameByUserId(int id_User) {
+        try {
+            return new NovellaGameDAO(connection).getTheBestNovellaGameByUserId(id_User);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public void createNovellaGame(NovellaGame novella) {
         try {
             new NovellaGameDAO(connection).createNovellaGame(novella);
@@ -75,6 +94,15 @@ public class NovellaCreateAndPlayDAO implements NovellaCAPBase{
     public void createNovellaGame(int id_User, String name, String poster, String description, int age) {
         try {
             new NovellaGameDAO(connection).createNovellaGame(id_User, name, poster, description, age);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public Map<Integer, String> getGenres() {
+        try {
+            return new GenreDAO(connection).getAllGenres();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
