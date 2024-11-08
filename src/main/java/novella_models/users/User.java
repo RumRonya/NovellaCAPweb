@@ -79,5 +79,17 @@ public class User {
         this.playGames = playGames;
     }
 
+    public NovellaGame getTheBestNovella(){
+        return null;
+    }
+
+    public double getAvgRating(){
+        return 0;
+    }
+
+    public List<String> getMainGenres(){
+        return null;
+    }
+
     //lists??
 }

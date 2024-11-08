@@ -243,7 +243,7 @@
 <div class="index-filter pattern-block"></div>
 
 <div class="page-main">
-    <div class="quest-preview__wrap page-container" style="padding-left: 350px; padding-right: 350px; padding-top: 50px" class="auth-form-2">
+    <div class="quest-preview__wrap page-container auth-form-2" style="padding-left: 350px; padding-right: 350px; padding-top: 50px">
         <form action="/submit_form" method="POST">
             <label for="title" >Название:</label><br>
             <input type="text" id="title" name="title"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark">
@@ -264,8 +264,8 @@
                     if (i%3==0) {out.print("<br>");}
             %>
 
-            <input type="checkbox" id="genre_comedy" name="genre[]" value="<%out.print(entry.getKey());%>>"  style="display: inline-block">
-            <label for="genre_comedy" style="display: inline-block; width: 25%"><%out.print(entry.getValue());%></label>
+            <input type="checkbox" id="genre_<%out.print(entry.getKey());%>" name="genre[]" value="<%out.print(entry.getKey());%>>"  style="display: inline-block">
+            <label for="genre_<%out.print(entry.getKey());%>" style="display: inline-block; width: 25%"><%out.print(entry.getValue());%></label>
 <%i++; }%>
 
             <br>
