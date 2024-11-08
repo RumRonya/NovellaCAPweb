@@ -199,18 +199,19 @@
                 <a href="novellas.html">Новеллы</a>
             </li>
             <li class="nav-menu__item">
+                <%Map<Integer, String> genres = (HashMap<Integer, String>) request.getAttribute("genres");%>
+
                 <a href="#" class="nav-menu__sub-toggle js-nav-menu-sub-toggle"><span>Жанры</span></a>
                 <div class="nav-menu__sub-menu js-nav-menu-sub-menu">
                     <ul class="page-container clearfix">
+                        <%for(Map.Entry<Integer, String> entry: genres.entrySet()){
+                        %>
                         <li class="nav-menu__sub-item">
-                            <a href="/novellas/genre/4">Комедия</a>
+                            <a href="/novellas/genre/<%out.print(entry.getKey());%>">
+                                <%out.print(entry.getValue());%>
+                            </a>
                         </li>
-                        <li class="nav-menu__sub-item">
-                            <a href="/novellas/genre/4">Ужасы</a>
-                        </li>
-                        <li class="nav-menu__sub-item">
-                            <a href="/novellas/genre/4">Кусок жизни</a>
-                        </li>
+                        <%}%>
                     </ul>
                 </div>
             </li><li class="nav-menu__item">
@@ -244,7 +245,7 @@
 
 <div class="page-main">
     <div class="quest-preview__wrap page-container auth-form-2" style="padding-left: 350px; padding-right: 350px; padding-top: 50px">
-        <form action="/submit_form" method="POST">
+        <form method="POST">
             <label for="title" >Название:</label><br>
             <input type="text" id="title" name="title"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark">
 
@@ -257,8 +258,6 @@
             <label>Жанры:</label>
 
             <%
-
-                Map<Integer, String> genres = (HashMap<Integer, String>) request.getAttribute("genres");
                 int i = 0;
                 for(Map.Entry<Integer, String> entry: genres.entrySet()){
                     if (i%3==0) {out.print("<br>");}
@@ -270,6 +269,35 @@
 
             <br>
             <br>
+
+            <script>
+                var checkboxes = document.querySelectorAll('input[name="genre[]"]');
+                var limit = 5;
+                var checkedCheckboxes = [];
+
+                checkboxes.forEach(function(checkbox) {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            if (checkedCheckboxes.length >= limit) {
+                                this.checked = false;
+                               // checkedCheckboxes.shift();
+                            }
+                            else {
+                                checkedCheckboxes.push(this);
+                            }
+
+                        } else {
+                            var index = checkedCheckboxes.indexOf(this);
+                            if (index > -1) {
+                                checkedCheckboxes.splice(index, 1);
+                            }
+                        }
+                    });
+                });
+            </script>
+
+
+
             <label for="description">Описание:</label><br>
             <textarea id="description" name="description"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark"></textarea>
 

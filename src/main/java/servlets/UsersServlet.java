@@ -24,6 +24,7 @@ public class UsersServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("doGetUser");
         try {
             NovellaCreateAndPlayDAO dao = new NovellaCreateAndPlayDAO();
             List<User> users = dao.getCreatingUsers();
@@ -48,5 +49,6 @@ public class UsersServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
     }
 }
