@@ -1,7 +1,28 @@
 package novella_models.logicnovellas;
 
-public enum Genre {
-    SUPERHERO, FANTASY, SCIENCE_FICTION, HORROR, MYSTERY, ROMANCE, HISTORICAL_FICTION,
-    ADVENTURE, CRIME, COMEDY, SLICE_OF_LIFE, AUTOBIOGRAPHICAL, DYSTOPIAN, COMING_OF_AGE,
-    THRILLER, WESTERN, LGBTQ, STEAMPUNK, SATIRE, NOIR
+public class Genre {
+    private int genre_id;
+    private String genre;
+
+    public Genre() {
+    }
+
+    public Genre(int genre_id, String genre) {
+        this.genre_id = genre_id;
+        this.genre = genre;
+    }
+
+    public int getGenre_id() {
+        return genre_id;
+    }
+    public void setGenre_id(int genre_id) {
+        this.genre_id = genre_id;
+    }
+    public String getGenre() {
+        return genre;
+    }
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
 }

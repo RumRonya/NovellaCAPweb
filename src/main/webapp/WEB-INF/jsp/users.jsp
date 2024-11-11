@@ -279,7 +279,7 @@
                         <div class="team-item__col team-item__col--mid-left" style="display:inline-block; padding: 20px">
                             <h3 class="team-item__title page-title page-title--h3">
                                 <a href="index.html">
-                                        <img src="images/users/verdeth.webp" style="width: 100px; object-fit: cover; border-radius: 50px; margin-right: 15px; display:inline-block; float: left"  alt="картинка _Нагибаторы228_ от Квест Батл" title="картинка _Нагибаторы228_ от Квест Батл">
+                                        <img src="<%out.print(users.get(i).getImg());%>" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50px; margin-right: 15px; display:inline-block; float: left"  alt="картинка _Нагибаторы228_ от Квест Батл" title="картинка _Нагибаторы228_ от Квест Батл">
                                     <div style="float: right;">
                                         <div><%out.print(users.get(i).getLogin());%></div>
                                         <div class="team-item__stat quest-stat quest-stat--small quest-stat--rating">

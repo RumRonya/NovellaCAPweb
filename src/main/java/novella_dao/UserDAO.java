@@ -85,6 +85,7 @@ public class UserDAO {
             User user = new User();
             user.setID_USER(resultSet.getInt("ID"));
             user.setLogin(resultSet.getString("login"));
+            user.setImg(resultSet.getString("image"));
             users.add(user);
         }
         return users;

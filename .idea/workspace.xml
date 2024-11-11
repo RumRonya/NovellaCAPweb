@@ -9,11 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5eb6f96-487e-42e6-9d21-0419c9a7b180" name="Changes" comment="star servlets edit info">
+    <list default="true" id="e5eb6f96-487e-42e6-9d21-0419c9a7b180" name="Changes" comment="create novella servlet and form">
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/EncodingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCAPBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCAPBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCreateAndPlayDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaCreateAndPlayDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novella_dao/NovellaGameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novella_dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novella_dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/NovellaGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novella_models/logicnovellas/NovellaGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/EditInfoNovellaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/EditInfoNovellaServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UsersServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/edit_info_novella.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/edit_info_novella.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/users.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +65,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -82,7 +91,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "File.Encoding",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -235,7 +247,13 @@
       <workItem from="1730703803162" duration="263000" />
       <workItem from="1730704307855" duration="11156000" />
       <workItem from="1730718813980" duration="20764000" />
-      <workItem from="1731082369068" duration="4324000" />
+      <workItem from="1731082369068" duration="7740000" />
+      <workItem from="1731096433674" duration="8680000" />
+      <workItem from="1731172423137" duration="942000" />
+      <workItem from="1731173603018" duration="82000" />
+      <workItem from="1731173703724" duration="13064000" />
+      <workItem from="1731253117444" duration="13051000" />
+      <workItem from="1731305819106" duration="8824000" />
     </task>
     <task id="LOCAL-00001" summary="add Maven">
       <option name="closed" value="true" />
@@ -341,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731083264939</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="create novella servlet and form">
+      <option name="closed" value="true" />
+      <created>1731092974860</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1731092974860</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +393,8 @@
     <MESSAGE value="users.jsp" />
     <MESSAGE value="users.jsp changed" />
     <MESSAGE value="star servlets edit info" />
-    <option name="LAST_COMMIT_MESSAGE" value="star servlets edit info" />
+    <MESSAGE value="create novella servlet and form" />
+    <option name="LAST_COMMIT_MESSAGE" value="create novella servlet and form" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -377,6 +404,21 @@
           <line>378</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/novella_dao/NovellaGameDAO.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/novella_dao/NovellaGameDAO.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/novella_dao/NovellaGameDAO.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/../../for design/not_my_design_files/template_6a89eeb8b38165c3ac089882fb3396de_v1.js</url>
           <line>483</line>
@@ -384,5 +426,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="((Decoder)this.decoder).replacement" custom="jakarta.servlet.http.HttpServletRequest,sun.nio.cs.UTF_8.Decoder" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

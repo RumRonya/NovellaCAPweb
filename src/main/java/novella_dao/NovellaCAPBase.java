@@ -1,9 +1,9 @@
 package novella_dao;
 
+import jakarta.servlet.http.Part;
 import novella_models.logicnovellas.NovellaGame;
 import novella_models.users.User;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +17,10 @@ public interface NovellaCAPBase {
 
     //novellas
     public void createNovellaGame(NovellaGame novella);
-    public void createNovellaGame(int id_User, String name, String poster, String description, int age);
+    public int createNovellaGame(int id_User, String name, String h_poster, String v_poster, String[] genres, String description, int age);
+
 
     Map<Integer, String> getGenres();
+
+    void setPosters(int id_novella, String hPoster, String vPoster);
 }

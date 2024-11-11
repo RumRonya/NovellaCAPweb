@@ -245,15 +245,16 @@
 
 <div class="page-main">
     <div class="quest-preview__wrap page-container auth-form-2" style="padding-left: 350px; padding-right: 350px; padding-top: 50px">
-        <form method="POST">
-            <label for="title" >Название:</label><br>
-            <input type="text" id="title" name="title"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark">
+        <form method="POST" enctype="multipart/form-data">
+            <label for="title" id="lab">Название:</label><br>
+            <input type="text" id="title" name="title" class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark">
+
 
             <label for="vertical_poster">Вертикальный постер:</label><br>
-            <input type="file" id="vertical_poster" name="vertical_poster" class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark" accept="image/*">
+            <input type="file" id="vertical_poster" name="v_poster" class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark" accept="image/*">
 
             <label for="horizontal_poster">Горизонтальный постер:</label><br>
-            <input type="file" id="horizontal_poster" name="horizontal_poster"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark" accept="image/*">
+            <input type="file" id="horizontal_poster" name="h_poster"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark" accept="image/*">
 
             <label>Жанры:</label>
 
@@ -263,7 +264,7 @@
                     if (i%3==0) {out.print("<br>");}
             %>
 
-            <input type="checkbox" id="genre_<%out.print(entry.getKey());%>" name="genre[]" value="<%out.print(entry.getKey());%>>"  style="display: inline-block">
+            <input type="checkbox" id="genre_<%out.print(entry.getKey());%>" name="genre[]" value="<%out.print(entry.getKey());%>"  style="display: inline-block">
             <label for="genre_<%out.print(entry.getKey());%>" style="display: inline-block; width: 25%"><%out.print(entry.getValue());%></label>
 <%i++; }%>
 
@@ -296,22 +297,20 @@
                 });
             </script>
 
-
-
             <label for="description">Описание:</label><br>
-            <textarea id="description" name="description"  class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark"></textarea>
+            <textarea id="description" name="description" class="auth-form-2__field--wide auth-form-2__field input-field input-field--line input-field--large input-field--dark" style="max-height: 200; overflow-y: auto"></textarea>
 
             <label>Возрастное ограничение:</label><br>
-            <input type="radio" id="age_0" name="age" value="0+" style="display: inline-block">
+            <input type="radio" id="age_0" name="age" value="0" style="display: inline-block">
             <label for="age_0" style="display: inline-block; margin-right: 15px">0+</label>
 
-            <input type="radio" id="age_6" name="age" value="6+" style="display: inline-block">
+            <input type="radio" id="age_6" name="age" value="6" style="display: inline-block">
             <label for="age_6" style="display: inline-block;  margin-right: 15px">6+</label>
 
-            <input type="radio" id="age_12" name="age" value="12+" style="display: inline-block">
+            <input type="radio" id="age_12" name="age" value="12" style="display: inline-block">
             <label for="age_12" style="display: inline-block;  margin-right: 15px">12+</label>
 
-            <input type="radio" id="age_18" name="age" value="18+" style="display: inline-block">
+            <input type="radio" id="age_18" name="age" value="18" style="display: inline-block">
             <label for="age_18" style="display: inline-block">18+</label><br><br>
 
             <input type="submit" value="Создать" class="button button--large button--red" style="display:inline-block;"><a class="button button--large" style="display: inline-block" id="del">Удалить</a>

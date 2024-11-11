@@ -1,8 +1,10 @@
 package novella_dao;
 
+import jakarta.servlet.http.Part;
 import novella_models.logicnovellas.NovellaGame;
 import novella_models.users.User;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -91,9 +93,9 @@ public class NovellaCreateAndPlayDAO implements NovellaCAPBase{
     }
 
     @Override
-    public void createNovellaGame(int id_User, String name, String poster, String description, int age) {
+    public int createNovellaGame(int id_User, String name, String h_poster, String v_poster, String[] genres, String description, int age) {
         try {
-            new NovellaGameDAO(connection).createNovellaGame(id_User, name, poster, description, age);
+            return new NovellaGameDAO(connection).createNovellaGame(id_User, name, h_poster, v_poster, genres, description, age);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -104,6 +106,15 @@ public class NovellaCreateAndPlayDAO implements NovellaCAPBase{
         try {
             return new GenreDAO(connection).getAllGenres();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void setPosters(int id_novella, String hPoster, String vPoster) {
+        try {
+            new NovellaGameDAO(connection).setPosters(id_novella, hPoster, vPoster);
+        } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
     }

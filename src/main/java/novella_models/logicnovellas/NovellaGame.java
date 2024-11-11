@@ -12,15 +12,40 @@ public class NovellaGame {
     private int ID_NOVELLA;
     private User creator;
     private String name;
-    private String poster;
+    private String v_poster;
+    private String h_poster;
     private String description;
-    private Genre genre;
+    private List<Genre> genres;
     private double rating;
     private int ageRestriction;
     private Duration duration;
     private Date createDate;
     private Date updateDate;
     private List<Scene> scenes;
+
+    public String getV_poster() {
+        return v_poster;
+    }
+
+    public void setV_poster(String v_poster) {
+        this.v_poster = v_poster;
+    }
+
+    public String getH_poster() {
+        return h_poster;
+    }
+
+    public void setH_poster(String h_poster) {
+        this.h_poster = h_poster;
+    }
+
+    public List<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
+    }
 
     public int getID_NOVELLA() {
         return ID_NOVELLA;
@@ -46,28 +71,12 @@ public class NovellaGame {
         this.name = name;
     }
 
-    public String getPoster() {
-        return poster;
-    }
-
-    public void setPoster(String poster) {
-        this.poster = poster;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Genre getGenre() {
-        return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
     }
 
     public double getRating() {
